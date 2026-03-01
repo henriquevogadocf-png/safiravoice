@@ -113,7 +113,7 @@ async function startServer() {
 
     const server = createServer(app);
     const wss = new WebSocketServer({ server, path: "/api/calls/stream" });
-    const PORT = 3000;
+    const PORT = Number(process.env.PORT) || 8080;
 
   wss.on("connection", (ws: WebSocket) => {
     console.log("Twilio Media Stream connected");
