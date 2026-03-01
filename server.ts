@@ -7,7 +7,8 @@ import Database from "better-sqlite3";
 import twilio from "twilio";
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { WebSocketServer, WebSocket } from "ws";
-import { WaveFile } from "wavefile";
+import pkg from "wavefile";
+const { WaveFile } = pkg;
 import { createServer } from "http";
 
 const __filename = fileURLToPath(import.meta.url);
