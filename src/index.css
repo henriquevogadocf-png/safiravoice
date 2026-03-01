@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sapphire-50: #f0f4ff;
+  --color-sapphire-100: #e0e9ff;
+  --color-sapphire-200: #c1d3ff;
+  --color-sapphire-300: #92b1ff;
+  --color-sapphire-400: #5c84ff;
+  --color-sapphire-500: #2d50ff;
+  --color-sapphire-600: #1a31ff;
+  --color-sapphire-700: #0e1eff;
+  --color-sapphire-800: #0a16cc;
+  --color-sapphire-900: #0812a3;
+  --color-sapphire-950: #04095c;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@layer components {
+  .glass-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:border-sapphire-500/30;
+  }
+
+  .btn-primary {
+    @apply bg-sapphire-600 hover:bg-sapphire-500 text-white px-4 py-2 rounded-lg font-medium transition-all active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply glass hover:bg-white/10 text-white px-4 py-2 rounded-lg font-medium transition-all active:scale-95 flex items-center gap-2;
+  }
+
+  .input-field {
+    @apply glass bg-white/5 border-white/10 rounded-lg px-4 py-2 focus:outline-none focus:border-sapphire-500/50 transition-all;
+  }
+}
+
+@keyframes pulse-sapphire {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-sapphire {
+  animation: pulse-sapphire 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
