@@ -511,5 +511,5 @@ async function startServer() {
     console.error("CRITICAL: Server failed to start:", error);
   }
 }
-
+startServer();
 startServer();
